@@ -1,8 +1,89 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+  color: #2c2c2c;
+}
+header {
+  position: relative;
+  width: 1024px;
+  height: 52px;
+  margin: 0 auto;
+  padding: 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  white-space: nowrap;
+  background-color: white;
 }
 
+.btn-default {
+
+  position: relative;
+  margin-top:1px;
+  height: 40px;
+  margin-left: -25px;
+}
+.form-search input, .form-inline input, .form-horizontal input, .form-search textarea, .form-inline textarea, .form-horizontal textarea, .form-search select, .form-inline select, .form-horizontal select, .form-search .help-inline, .form-inline .help-inline, .form-horizontal .help-inline, .form-search .uneditable-input, .form-inline .uneditable-input, .form-horizontal .uneditable-input, .form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend, .form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
+  display: inline-block;
+  margin-bottom: 0;
+  width: 400px;
+  vertical-align: middle;
+  height: 40px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+#search {
+  margin-left: 30%;
+}
+
+header span .glyphicon{
+  margin-left: 10px;
+
+}
+.page-body{
+
+  height: 720px;
+  width: 1024px;
+  margin: 20px 20px;
+  background-image: url("../image1.jpg");
+  background-repeat: no-repeat;
+  border-image-repeat: stretch;
+
+}
+.search-container{
+  position: relative;
+  background-color: green;
+  height: 70px;
+  width: 1024px;
+  margin: auto;
+  padding: 4px 0;
+
+}
+header .rect{
+  position: absolute;
+  z-index: 1;
+  right: -50%;
+  bottom: 0px;
+  left: -50%;
+  width: 72%;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 100%;
+  box-shadow: 0 0 36px rgba(0,0,0,0.8);
+  content: "";
+}
+header span {
+  color : green;
+}
+
+header h1 {
+  position: relative;
+  padding-right: 20px;
+  font-size: 20px;
+
+}
 a {
-  color: #00B7FF;
+  color: red;
 }
