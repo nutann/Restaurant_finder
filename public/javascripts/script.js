@@ -42,9 +42,23 @@ $(document).ready(function () {
                 console.log("Entered");
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     console.log(results.size);
-                    for (var i = 0; i < results.length; i++) {
-                        console.log(results[i].name);
-                    }
+
+
+                    var cList = $('ul.horizontal-list')
+                    $.each(results, function(i,result)
+                    {
+                        var li = $('<li/>')
+                            .addClass('ui-menu-item')
+                            .attr('role', 'menuitem')
+                            .appendTo(cList);
+                        var aaa = $('<a/>')
+                            .addClass('ui-all')
+                            .text(result.name)
+                            .appendTo(li);
+                    });
+                    // for (var i = 0; i < results.length; i++) {
+                    //     console.log(results[i]);
+                    // }
                     console.log("Done");
                     $iSelector.removeClass('glyphicon glyphicon-repeat gly-spin');
                     $iSelector.addClass('glyphicon glyphicon-search');
