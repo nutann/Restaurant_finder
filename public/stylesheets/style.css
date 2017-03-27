@@ -75,7 +75,7 @@ header .rect{
   content: "";
 }
 header span {
-  color : green;
+  color : red;
 }
 
 header h1 {
