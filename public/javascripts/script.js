@@ -55,14 +55,20 @@ $(document).ready(function () {
                             .text(result.name)
                             .appendTo(li);
 
+                        var photoUrl = result.photos?(result.photos[0].getUrl({maxWidth: 400, maxHeight: 400})):"img";
+                        // var img = document.createElement("img");
+                        // img.setAttribute('src', photoUrl + "photo.jpg");
+                        // img.addClass('res-img');
 
+                        var li = $('<img>')
+                            .addClass('ui-img')
+                            .attr('src', photoUrl + "photo.jpg")
+                            .appendTo(li);
+                        console.log("result == "+JSON.stringify(result));
                     });
 
-                    $("ul.horizontal-list").quickPagination({pageSize:"5"})
+                    $("ul.horizontal-list").quickPagination({pageSize:"10"})
 
-                    // for (var i = 0; i < results.length; i++) {
-                    //     console.log(results[i]);
-                    // }
                     console.log("Done");
                     $iSelector.removeClass('glyphicon glyphicon-repeat gly-spin');
                     $iSelector.addClass('glyphicon glyphicon-search');

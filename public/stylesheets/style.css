@@ -36,7 +36,7 @@ header {
 }
 
 .form-search input, .form-inline input, .form-horizontal input, .form-search textarea, .form-inline textarea, .form-horizontal textarea, .form-search select, .form-inline select, .form-horizontal select, .form-search .help-inline, .form-inline .help-inline, .form-horizontal .help-inline, .form-search .uneditable-input, .form-inline .uneditable-input, .form-horizontal .uneditable-input, .form-search .input-prepend, .form-inline .input-prepend, .form-horizontal .input-prepend, .form-search .input-append, .form-inline .input-append, .form-horizontal .input-append {
-  margin-left: 30%;
+  margin-left: 150px;
 }
 header span .glyphicon{
   margin-left: 10px;
@@ -81,10 +81,21 @@ text-align: center;
   position: relative;
   background-color: green;
   height: 70px;
-  width: 1024px;
+  width: 1000px;
   margin: auto;
   padding: 4px 0;
+  display: inline-block;
 
+}
+.form-horizontal {
+  float: left;
+}
+.social_media {
+  display: inline;
+  width: 200px;
+  height: 35px;
+  float: right;
+  margin-right: 0px;
 }
 header .rect{
   position: absolute;
