@@ -41,8 +41,7 @@ $(document).ready(function () {
             function callbck(results, status) {
                 console.log("Entered");
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    console.log(results.size);
-
+                    console.log(results.length);
 
                     var cList = $('ul.horizontal-list')
                     $.each(results, function(i,result)
@@ -55,7 +54,12 @@ $(document).ready(function () {
                             .addClass('ui-all')
                             .text(result.name)
                             .appendTo(li);
+
+
                     });
+
+                    $("ul.horizontal-list").quickPagination({pageSize:"5"})
+
                     // for (var i = 0; i < results.length; i++) {
                     //     console.log(results[i]);
                     // }
@@ -68,8 +72,6 @@ $(document).ready(function () {
 
 
     })();
-
-
 
 });
 
