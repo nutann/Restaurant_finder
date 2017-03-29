@@ -42,12 +42,33 @@ header span .glyphicon{
   margin-left: 10px;
 
 }
+
+.ui-all{
+  color: white;
+}
+
+.ui-img {
+  height: 100px;
+  width: 146px;
+  padding: 3px;
+}
+
+address {
+  font-size: 10px;
+  color: darkseagreen;
+}
+.glyphicon-star {
+  content: "\e006";
+}
+.ui-img span {
+
+}
 .ui-menu-item {
-  height: 150px;
+  height: 190px;
   width: 150px;
-  border-style: solid;
-  border-color: black;
-  box-shadow: black;
+  border-style:inset;
+
+  box-shadow: 4px 4px 2px green;
   display: inline-block;
   margin: 20px;
 text-align: center;
@@ -63,18 +84,25 @@ text-align: center;
   width: 100%;
   height: 100%;
   position: relative;
-  margin-right: 50px;
-  padding-right: 20px;
+
+
+
+}
+.simplePagerNav {
+position: relative;
+  margin-left: 300px;
 
 }
 .page-body{
 
   height: 720px;
   width: 1024px;
-  margin: 20px 20px;
+  margin-top: 20px;
+  margin-right: 40px;
   background-image: url("../image1.jpg");
   background-repeat: no-repeat;
   border-image-repeat: stretch;
+  background-size: 100%;
 
 }
 .search-container{
@@ -120,6 +148,14 @@ header h1 {
   font-size: 20px;
 
 }
-a {
-  color: red;
+.ui-rating {
+  z-index: 100;
+  color: white;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  float: right;
+  font-size: 12px;
+  background-color: green;
 }
+

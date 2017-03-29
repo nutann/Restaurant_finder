@@ -8,10 +8,7 @@ $(document).ready(function () {
         event.preventDefault()
         var data = $("#search_form").serializeArray();
         console.log("data is ************"+JSON.stringify(data));
-        var div1 = (document).getElementById('horizontal-list');
-        while(div1 != null && div1.firstChild){
-            div1.innerHTML = '';
-        }
+
     });
 
     var place;
@@ -43,31 +40,60 @@ $(document).ready(function () {
             service.nearbySearch(request, callbck);
 
             function callbck(results, status) {
-                console.log("Entered");
+                console.log("Entered" +status);
+
+                var cList = $('ul.horizontal-list')
+                cList.empty();
+                $("ul.horizontal-list").quickPagination({pageSize:"0"})
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    console.log("Entered 2 " +status);
                     console.log(results.length);
 
-                    var cList = $('ul.horizontal-list')
                     $.each(results, function(i,result)
                     {
-                        var li = $('<li/>')
-                            .addClass('ui-menu-item')
-                            .attr('role', 'menuitem')
-                            .appendTo(cList);
-                        var aaa = $('<a/>')
-                            .addClass('ui-all')
-                            .text(result.name)
+
+                            var li = $('<li/>')
+                                .addClass('ui-menu-item')
+                                .attr('role', 'menuitem')
+                                .appendTo(cList);
+
+
+                            var photoUrl = result.photos?(result.photos[0].getUrl({maxWidth: 100, maxHeight: 100}))+"photo.jpg":"image1.jpg";
+                            //console.log("photoUrl " +photoUrl);
+                            /* var img = $('<img/>')
+                             .addClass('ui-img')
+                             .attr('src', photoUrl)
+                             .appendTo(li);
+                             var rating = $('<span/>')
+                             .addClass('ui-rating')
+                             .text(result.rating)
+                             .appendTo(img);*/
+
+                            var image = $('<div/>', {
+                                id : 'image' + i,
+                                class :'ui-img',
+                            }).appendTo(li);
+                            image.css({"background-image": "url("+ photoUrl +")","background-repeat": "no-repeat","background-size":"cover"});
+                            var rating = $('<span/>')
+                                .addClass('ui-rating')
+                                .text(function () {
+                                  return result.rating||"N/A"
+                                }).appendTo(image);
+                        rating.append('<span class="glyphicon glyphicon-star"></span>')
+
+
+                            //  var imagediv = '<div class="ui-img" data-original=photoUrl style="background-image: url(photoUrl); height: 90px; display: block;"> <div class="ui-rating">{result.rating} </div> </div>'
+                            //li.append(imagediv);
+                            var aaa = $('<a/>')
+                                .addClass('ui-all')
+                                .text(result.name)
+                                .appendTo(li);
+                        var aaa = $('<address>')
+                            .addClass('ui-address')
+                            .text(result.vicinity)
                             .appendTo(li);
 
-                        var photoUrl = result.photos?(result.photos[0].getUrl({maxWidth: 400, maxHeight: 400})):"img";
-                        // var img = document.createElement("img");
-                        // img.setAttribute('src', photoUrl + "photo.jpg");
-                        // img.addClass('res-img');
 
-                        var li = $('<img>')
-                            .addClass('ui-img')
-                            .attr('src', photoUrl + "photo.jpg")
-                            .appendTo(li);
                         console.log("result == "+JSON.stringify(result));
                     });
 
