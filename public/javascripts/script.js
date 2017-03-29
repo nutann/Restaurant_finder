@@ -8,6 +8,10 @@ $(document).ready(function () {
         event.preventDefault()
         var data = $("#search_form").serializeArray();
         console.log("data is ************"+JSON.stringify(data));
+        var div1 = (document).getElementById('horizontal-list');
+        while(div1 != null && div1.firstChild){
+            div1.innerHTML = '';
+        }
     });
 
     var place;
